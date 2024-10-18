@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+    color: #333;
+    background: linear-gradient(135deg, #1c1c3c, #000);
+    min-height: 100vh;
+    line-height: 1.6;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 5.625rem 1.25rem 1.25rem;
+    text-align: justify;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+header {
+   
+    padding: 30px 0 ;
+    text-align: center;
+}
+
+.banner-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    bottom: 100%;
+   
+}
+
+.banner {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    height: auto;
+    max-height: 400px; /* Ajuste a altura máxima do banner */
+    border-radius: 10px;
+}
+
+.ofertas {
+    padding: 50px 20px;
+    background-color: transparent; /* Fundo transparente */
+    text-align: center;
+}
+
+.ofertas h1 {
+    font-size: 2rem;
+    color: #E91E63;
+    margin-bottom: 40px;
+}
+
+.ofertas-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.produto-oferta {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Mantém a sombra */
+    max-width: 250px;
+    text-align: center;
+    position: relative;
+    background-color: #3e3d3d; /* Remove o fundo branco */
+}
+
+.produto-oferta img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produto-oferta h1 {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.produto-oferta p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.preco-original {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.preco-desconto {
+    font-size: 1.5rem;
+    color: #E91E63;
+    font-weight: bold;
+}
+
+.produto-oferta button {
+    padding: 10px 20px;
+    background-color: #FF5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.produto-oferta button:hover {
+    background-color: #E64A19;
+}
+
+/* Destaque visual de oferta */
+.produto-oferta::before {
+    content: "Oferta!";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF5722;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+.header {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    padding: 0 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.sei {
+    bottom: 200px;
+}
+
+.nav {
+    max-width: 80rem;
+    /* 1280px → 80rem */
+    height: 4.375rem;
+    /* 70px → 4.375rem */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: 1.125rem;
+    color: #f0f0f0;
+    padding: 0.5rem 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-list a:hover {
+    color: aqua;
+}
+
+.logo img {
+    width: 6.25rem;
+    height: auto;
+}
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    width: 2rem;
+    height: 1.5rem;
+    z-index: 1500;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.1875rem;
+    /* 3px → 0.1875rem */
+   
+    transition: transform 0.3s, top 0.3s;
+}
+
+.hamburguer::before {
+    top: 0;
+}
+
+.hamburguer::after {
+    top: 0.75rem;
+    /* 12px → 0.75rem */
+}
+
+@media (max-width: 46.875rem) {
+
+    /* 750px → 46.875rem */
+    .hamburguer {
+        display: block;
+    }
+
+    .nav-list {
+        position: fixed;
+        margin: 0 auto;
+        padding: 5.625rem 1.25rem 1.25rem;
+        /* 90px 20px 20px → 5.625rem 1.25rem 1.25rem */
+        top: -100vh;
+        right: 0;
+        width: 30vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #333, #1a1a1a);
+        transition: top 0.5s ease-in-out;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2rem;
+        pointer-events: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav.active .nav-list {
+        top: 0;
+        pointer-events: all;
+    }
+
+    .nav-list a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        font-size: 1.5rem;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(-20px);
+        word-wrap: break-word;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition-delay: 0.1s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition-delay: 0.2s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition-delay: 0.3s;
+    }
+
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+        top: 0.75rem;
+        /* 12px → 0.75rem */
+    }
+
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: 0.75rem;
+        /* 12px → 0.75rem */
+    }
+}
+
+@media (max-width: 30rem) {
+
+    /* 480px */
+    .nav-list {
+        width: 50vw;
+    }
+
+    .nav-list a {
+        font-size: 1rem;
+    }
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
